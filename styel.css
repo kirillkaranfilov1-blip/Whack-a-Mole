@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.game {
+    width: 500px;
+    max-width: 95%;
+
+    padding: 30px;
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    margin-bottom: 25px;
+
+    font-size: 32px;
+}
+
+.game-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+.info-box {
+    padding: 12px;
+
+    background: #f3f4f6;
+
+    border-radius: 10px;
+}
+
+.info-box span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 14px;
+
+    color: #666;
+}
+
+.info-box strong {
+    font-size: 24px;
+}
+
+.start-btn {
+    border: none;
+
+    padding: 12px 25px;
+
+    margin-bottom: 20px;
+
+    border-radius: 10px;
+
+    background: #4f46e5;
+
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.start-btn:hover {
+    transform: scale(1.05);
+}
+
+.start-btn:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+.game-board {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    padding: 15px;
+
+    background: #d1d5db;
+
+    border-radius: 15px;
+}
+
+.hole {
+    height: 120px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #9ca3af;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+.hole:hover {
+    background: #8b94a1;
+}
+
+.hole.active {
+    background: #84cc16;
+}
+
+.mole {
+    width: 75px;
+    height: 75px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #8b5a2b;
+
+    font-size: 45px;
+
+    cursor: pointer;
+
+    animation: appear 0.2s ease;
+}
+
+.message {
+    min-height: 25px;
+
+    margin-top: 20px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+@keyframes appear {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 500px) {
+    .game {
+        padding: 20px;
+    }
+
+    .hole {
+        height: 90px;
+    }
+
+    .mole {
+        width: 60px;
+        height: 60px;
+
+        font-size: 35px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+}
